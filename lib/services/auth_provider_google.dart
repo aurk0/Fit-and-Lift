@@ -14,8 +14,9 @@ class AuthHelper1 {
     return res.user;
   }
 
-  // static logOut() {
-  //   GoogleSignIn().signOut();
-  //   return _auth.signOut();
-  // }
+  static logOut() {
+    GoogleSignIn().disconnect();
+    FirebaseAuth.instance.signOut();
+    return _auth.signOut();
+  }
 }
