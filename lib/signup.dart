@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_lift/page1.dart';
+import 'package:fit_lift/services/auth_provider_facebook.dart';
 import 'package:fit_lift/services/auth_provider_google.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -75,10 +76,9 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(
                     height: 10,
                   ),
-                  SignInButton(
-                      buttonType: ButtonType.facebook,
-                      buttonSize: ButtonSize.large,
-                      onPressed: () {}),
+                  Row(
+                    children: [AuthFacebook()],
+                  ),
                   SizedBox(
                     height: 10,
                   ),

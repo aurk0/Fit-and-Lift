@@ -1,4 +1,4 @@
-package com.example.fit_lift
+package com.propractice.fit_lift
 
 import io.flutter.embedding.android.FlutterActivity
 

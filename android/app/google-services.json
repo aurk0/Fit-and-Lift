@@ -7,17 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:950924311884:android:4b42f0e6a55769a4d823e9",
+        "mobilesdk_app_id": "1:950924311884:android:98a7d718d202966ad823e9",
         "android_client_info": {
-          "package_name": "com.example.fit_lift"
+          "package_name": "com.propractice.fit_lift"
         }
       },
       "oauth_client": [
         {
-          "client_id": "950924311884-5iagva4pf2ni1rbackgs744hv39khftq.apps.googleusercontent.com",
+          "client_id": "950924311884-2copm13hdkv1a3tpui1rufnq4hjd0714.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.fit_lift",
+            "package_name": "com.propractice.fit_lift",
             "certificate_hash": "5bc3d4f195c56c7a32c309ff7452a6bd9ea9da17"
           }
         },
