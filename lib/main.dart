@@ -1,14 +1,12 @@
 import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fit_lift/login.dart';
 import 'package:fit_lift/page1.dart';
-import 'package:fit_lift/sdasd.dart';
-import 'package:fit_lift/signup.dart';
+import 'package:fit_lift/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import 'signup.dart';
+import 'signin.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +17,7 @@ void main() async {
 class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: (SignUp()));
+    return MaterialApp(debugShowCheckedModeBanner: false, home: (Page1()));
   }
 }
 
@@ -36,7 +34,7 @@ class _FitLiftState extends State<FitLift> {
     Timer(
         Duration(seconds: 4),
         () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => SignUp())));
+            context, MaterialPageRoute(builder: (context) => SignIn())));
   }
 
   @override
