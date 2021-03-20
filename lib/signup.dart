@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_lift/page1.dart';
-import 'package:fit_lift/services/auth_provider.dart';
+import 'package:fit_lift/services/auth_provider_google.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_button/constants.dart';
@@ -65,7 +65,7 @@ class _SignUpState extends State<SignUp> {
                       buttonSize: ButtonSize.large,
                       onPressed: () async {
                         try {
-                          await AuthHelper.signInWithGoogle();
+                          await AuthHelper1.signInWithGoogle();
                           Navigator.of(context).push(
                               MaterialPageRoute(builder: (context) => Page1()));
                         } catch (e) {
