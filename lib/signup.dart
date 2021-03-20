@@ -60,10 +60,9 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(
                     height: 15,
                   ),
-                  SizedBox(
-                    height: 50,
-                    width: 300,
-                    child: RaisedButton(
+                  SignInButton(
+                      buttonType: ButtonType.google,
+                      buttonSize: ButtonSize.large,
                       onPressed: () async {
                         try {
                           await AuthHelper.signInWithGoogle();
@@ -72,43 +71,14 @@ class _SignUpState extends State<SignUp> {
                         } catch (e) {
                           print(e);
                         }
-                      },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Image.asset(
-                            'gymImages/google.png',
-                            height: 30,
-                          ),
-                          Text('Sign In with Google')
-                        ],
-                      ),
-                    ),
-                  ),
+                      }),
                   SizedBox(
                     height: 10,
                   ),
-                  SizedBox(
-                    height: 50,
-                    width: 300,
-                    child: RaisedButton(
-                      onPressed: () {},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Image.asset(
-                            'gymImages/fb.png',
-                            height: 30,
-                          ),
-                          Text('Sign In with Facebook')
-                        ],
-                      ),
-                    ),
-                  ),
+                  SignInButton(
+                      buttonType: ButtonType.facebook,
+                      buttonSize: ButtonSize.large,
+                      onPressed: () {}),
                   SizedBox(
                     height: 10,
                   ),
