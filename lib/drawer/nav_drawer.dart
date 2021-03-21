@@ -27,8 +27,7 @@ class NavDrawer extends StatelessWidget {
             ),
             CircleAvatar(
               radius: 40.0,
-              backgroundImage:
-                  NetworkImage("https://i.redd.it/yudjb1uaiwf41.png"),
+              backgroundImage: NetworkImage(user.photoURL),
             ),
             SizedBox(
               width: 10,
@@ -38,14 +37,14 @@ class NavDrawer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Musta Fiz',
+                  user.displayName,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  'example@gmail.com',
+                  user.email,
                   style: TextStyle(
                     color: Colors.blue,
                     fontSize: 12,
