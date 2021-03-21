@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fit_lift/services/auth_provider_facebook.dart';
 import 'package:fit_lift/services/auth_provider_google.dart';
 import 'package:flutter/material.dart';
 
@@ -11,43 +12,82 @@ class NavDrawer extends StatelessWidget {
 
     return Column(children: [
       Container(
-          height: 250,
-          width: double.infinity,
-          color: Colors.grey[900],
-          child: Stack(
-            children: [
-              Positioned(
-                top: 50,
-                left: 100,
-                child: CircleAvatar(
-                  radius: 50.0,
-                  backgroundImage: NetworkImage(user.photoURL),
+        height: 200,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('gymImages/drawer.jpg'),
+                fit: BoxFit.cover,
+                colorFilter:
+                    ColorFilter.mode(Colors.brown[100], BlendMode.colorBurn))),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 20,
+            ),
+            CircleAvatar(
+              radius: 40.0,
+              backgroundImage:
+                  NetworkImage("https://i.redd.it/yudjb1uaiwf41.png"),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Musta Fiz',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
                 ),
-              ),
-              Positioned(
-                top: 170,
-                left: 40,
-                child: Text(
-                  'Name: ' + user.displayName,
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
-              ),
-              Positioned(
-                top: 200,
-                left: 40,
-                child: Text(
-                  'E-mail: ' + user.email,
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
-              )
-            ],
-          )),
+                Text(
+                  'example@gmail.com',
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 12,
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ),
       Container(
         height: 300,
         width: double.infinity,
-        color: Colors.green,
-        child: Column(
+        child: ListView(
           children: [
+            ListTile(
+              onTap: () {},
+              leading: Icon(
+                Icons.schedule_rounded,
+                color: Colors.black,
+              ),
+              title: Text("My Workout Schedule"),
+            ),
+            ListTile(
+              onTap: () {},
+              leading: Icon(
+                Icons.alarm_rounded,
+                color: Colors.black,
+              ),
+              title: Text("Reminder"),
+            ),
+            ListTile(
+              onTap: () {
+                showAboutDialog(
+                    context: context, applicationName: 'Fit & Lift');
+              },
+              leading: Icon(
+                Icons.security_rounded,
+                color: Colors.black,
+              ),
+              title: Text("About"),
+            ),
             ListTile(
               onTap: () {
                 AuthHelper1.logOut();

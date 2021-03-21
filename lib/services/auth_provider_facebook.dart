@@ -63,12 +63,12 @@ class _AuthFacebookState extends State<AuthFacebook> {
     });
   }
 
-  // Future<void> gooleSignout() async {
-  //   await _auth.signOut().then((onValue) {
-  //     setState(() {
-  //       facebookLogin.logOut();
-  //       isSignIn = false;
-  //     });
-  //   });
-  // }
+  Future<void> signout() async {
+    await _auth.signOut().then((onValue) {
+      setState(() {
+        facebookLogin.logOut();
+        isSignIn = false;
+      });
+    });
+  }
 }
