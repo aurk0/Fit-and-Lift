@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_lift/services/auth_provider_facebook.dart';
 import 'package:fit_lift/services/auth_provider_google.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({Key key}) : super(key: key);
@@ -40,7 +41,7 @@ class NavDrawer extends StatelessWidget {
                   user.displayName,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 25,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
@@ -89,7 +90,9 @@ class NavDrawer extends StatelessWidget {
             ),
             ListTile(
               onTap: () {
-                AuthHelper1.logOut();
+                final provider =
+                    Provider.of<GoogleSignInProvider>(context, listen: false);
+                provider.logout();
               },
               leading: Icon(
                 Icons.logout,

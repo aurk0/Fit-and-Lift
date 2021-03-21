@@ -2,16 +2,16 @@ import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fit_lift/page1.dart';
-import 'package:fit_lift/signin.dart';
+import 'package:fit_lift/signInModel/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import 'signin.dart';
+import 'signInModel/signin.dart';
 
-void main() async {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(new MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {

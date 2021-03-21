@@ -1,21 +1,45 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-class AuthHelper1 {
-  static FirebaseAuth _auth = FirebaseAuth.instance;
+class GoogleSignInProvider extends ChangeNotifier {
+  final googleSignIn = GoogleSignIn();
+  bool _isSigningIn;
 
-  static signInWithGoogle() async {
-    GoogleSignIn googleSignIn = GoogleSignIn();
-    final acc = await googleSignIn.signIn();
-    final auth = await acc.authentication;
-    final credential = GoogleAuthProvider.credential(
-        accessToken: auth.accessToken, idToken: auth.idToken);
-    final res = await _auth.signInWithCredential(credential);
-    return res.user;
+  GoogleSignInProvider() {
+    _isSigningIn = false;
   }
 
-  static logOut() async {
-    await GoogleSignIn().signOut();
-    return _auth.signOut();
+  bool get isSigningIn => _isSigningIn;
+
+  set isSigningIn(bool isSigningIn) {
+    _isSigningIn = isSigningIn;
+    notifyListeners();
+  }
+
+  Future login() async {
+    isSigningIn = true;
+
+    final user = await googleSignIn.signIn();
+    if (user == null) {
+      isSigningIn = false;
+      return;
+    } else {
+      final googleAuth = await user.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      await FirebaseAuth.instance.signInWithCredential(credential);
+
+      isSigningIn = false;
+    }
+  }
+
+  void logout() async {
+    await googleSignIn.disconnect();
+    FirebaseAuth.instance.signOut();
   }
 }
