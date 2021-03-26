@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Legs_Butt extends StatelessWidget {
+class Legs_Glutes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

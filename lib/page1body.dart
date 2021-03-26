@@ -1,4 +1,4 @@
-import 'package:fit_lift/exercises/legs_&_butt.dart';
+import 'package:fit_lift/exercises/legs&glutes/legs_&_glutes.dart';
 import 'package:fit_lift/page1header.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +14,8 @@ class Page1body extends StatelessWidget {
             height: 50,
           ),
           InkWell(
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Legs_Butt())),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Legs_Glutes())),
             child: Material(
                 child: Container(
                   height: 150,
