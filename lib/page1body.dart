@@ -1,3 +1,4 @@
+import 'package:fit_lift/exercises/legs_&_butt.dart';
 import 'package:fit_lift/page1header.dart';
 import 'package:flutter/material.dart';
 
@@ -12,27 +13,31 @@ class Page1body extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
-          Material(
-              child: Container(
-                height: 150,
-                width: 300,
-                child: Align(
-                  child: Text(
-                    'Legs & Butt',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+          InkWell(
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Legs_Butt())),
+            child: Material(
+                child: Container(
+                  height: 150,
+                  width: 300,
+                  child: Align(
+                    child: Text(
+                      'Legs & Glutes',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                    alignment: Alignment(0.90, 0.90),
                   ),
-                  alignment: Alignment(0.90, 0.90),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                          fit: BoxFit.fitWidth,
+                          image: AssetImage('gymImages/Box1.jpg'))),
                 ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                        fit: BoxFit.fitWidth,
-                        image: AssetImage('gymImages/Box1.jpg'))),
-              ),
-              color: Colors.white,
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15))),
+                color: Colors.white,
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15))),
+          ),
           SizedBox(
             height: 35,
           ),
