@@ -1,3 +1,14 @@
+import 'package:fit_lift/exercises/legs&glutes/d_k_l.dart';
+import 'package:fit_lift/exercises/legs&glutes/d_k_r.dart';
+import 'package:fit_lift/exercises/legs&glutes/f_h_l.dart';
+import 'package:fit_lift/exercises/legs&glutes/f_h_r.dart';
+import 'package:fit_lift/exercises/legs&glutes/h_k_j.dart';
+import 'package:fit_lift/exercises/legs&glutes/k_d.dart';
+import 'package:fit_lift/exercises/legs&glutes/o_t_s.dart';
+import 'package:fit_lift/exercises/legs&glutes/s_.dart';
+import 'package:fit_lift/exercises/legs&glutes/s_k.dart';
+import 'package:fit_lift/exercises/legs&glutes/s_l_b_l.dart';
+import 'package:fit_lift/exercises/legs&glutes/s_l_b_r.dart';
 import 'package:flutter/material.dart';
 
 class Legs_Glutes extends StatelessWidget {
@@ -25,7 +36,8 @@ class Legs_Glutes extends StatelessWidget {
         child: Column(
           children: [
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HighKneeJacks())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
@@ -59,7 +71,8 @@ class Legs_Glutes extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => KneeDrive())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
@@ -93,7 +106,8 @@ class Legs_Glutes extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ObliqueTwistSquat())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
@@ -127,7 +141,8 @@ class Legs_Glutes extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Squat())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
@@ -161,7 +176,8 @@ class Legs_Glutes extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Squat_Kick())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
@@ -195,7 +211,8 @@ class Legs_Glutes extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SingleLegR())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
@@ -229,7 +246,8 @@ class Legs_Glutes extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SingleLegL())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
@@ -263,7 +281,8 @@ class Legs_Glutes extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => DonkeyKR())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
@@ -297,7 +316,8 @@ class Legs_Glutes extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => DonkeyKL())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
@@ -331,7 +351,8 @@ class Legs_Glutes extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => FireHR())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
@@ -365,7 +386,8 @@ class Legs_Glutes extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => FireHL())),
               child: Material(
                 shadowColor: Colors.grey[900],
                 elevation: 20,
