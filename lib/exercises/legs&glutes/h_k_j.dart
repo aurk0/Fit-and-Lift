@@ -22,11 +22,11 @@ class HighKneeJacks extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Container(
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
@@ -34,8 +34,37 @@ class HighKneeJacks extends StatelessWidget {
               height: 270,
               width: double.infinity,
             ),
-          )
-        ],
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'Standing feet together with arms straight up to sky. Left right leg at right angle while swinging arms down touching under right leg. Recover then repeat in left side.',
+              style: TextStyle(fontSize: 25),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 50,
+              width: 300,
+              child: RaisedButton.icon(
+                  color: Colors.black,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)),
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.navigate_next_rounded,
+                    color: Colors.white,
+                    size: 40,
+                  ),
+                  label: Text(
+                    'Start',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  )),
+            )
+          ],
+        ),
       ),
     );
   }
