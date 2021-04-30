@@ -1,16 +1,23 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fit_lift/services/auth_provider_facebook.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:fit_lift/services/auth_provider_google.dart';
+import 'package:fit_lift/signInModel/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class NavDrawer extends StatelessWidget {
+class NavDrawer extends StatefulWidget {
   const NavDrawer({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser;
+  _NavDrawerState createState() => _NavDrawerState();
+}
 
+class _NavDrawerState extends State<NavDrawer> {
+  FirebaseAuth auth = FirebaseAuth.instance;
+  final user = FirebaseAuth.instance.currentUser;
+  @override
+  Widget build(BuildContext context) {
     return Column(children: [
       Container(
         height: 200,
@@ -93,6 +100,7 @@ class NavDrawer extends StatelessWidget {
                 final provider =
                     Provider.of<GoogleSignInProvider>(context, listen: false);
                 provider.logout();
+                mailLogout();
               },
               leading: Icon(
                 Icons.logout,
@@ -104,5 +112,13 @@ class NavDrawer extends StatelessWidget {
         ),
       ),
     ]);
+  }
+
+  Future mailLogout() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.remove('email');
+    await auth.signOut();
+    Navigator.pop(context);
+    Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn()));
   }
 }

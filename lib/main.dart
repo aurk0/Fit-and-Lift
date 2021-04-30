@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fit_lift/page1.dart';
 import 'package:fit_lift/signInModel/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -17,7 +16,7 @@ Future main() async {
 class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: (Page1()));
+    return MaterialApp(debugShowCheckedModeBanner: false, home: (FitLift()));
   }
 }
 
