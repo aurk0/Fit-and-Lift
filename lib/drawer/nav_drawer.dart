@@ -1,9 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:fit_lift/services/auth_provider_google.dart';
 import 'package:fit_lift/signInModel/signin.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class NavDrawer extends StatefulWidget {
@@ -96,10 +93,8 @@ class _NavDrawerState extends State<NavDrawer> {
               title: Text("About"),
             ),
             ListTile(
-              onTap: () {
-                final provider =
-                    Provider.of<GoogleSignInProvider>(context, listen: false);
-                provider.logout();
+              onTap: () async {
+                FirebaseAuth.instance.signOut();
                 mailLogout();
               },
               leading: Icon(
