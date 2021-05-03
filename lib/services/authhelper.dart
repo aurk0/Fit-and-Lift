@@ -23,15 +23,16 @@ class AuthHelper {
 
     UserCredential result = await _fAuth.signInWithCredential(credential);
     if (result != null) {
-      Map<String, dynamic> gUserMap = {
-        "email": result.user.email,
-        "username": result.user.displayName,
-        "image": result.user.photoURL
-      };
-      DataStore().addgUser(result.user.uid, gUserMap).then((value) {
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Page1()));
-      });
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Page1()));
+      // Map<String, dynamic> gUserMap = {
+      //   "email": result.user.email,
+      //   "username": result.user.displayName,
+      //   "image": result.user.photoURL
+      // };
+      // DataStore().addgUser(result.user.uid, gUserMap).then((value) {
+
+      // });
     }
   }
 

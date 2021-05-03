@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_lift/page1.dart';
 import 'package:fit_lift/services/authhelper.dart';
+import 'package:fit_lift/services/dataStore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,7 +13,8 @@ class ModelSignIn extends StatefulWidget {
 }
 
 class _ModelSignInState extends State<ModelSignIn> {
-  TextEditingController _emailcontroller1 = new TextEditingController();
+  TextEditingController _emailcontroller = new TextEditingController();
+  TextEditingController _namecontroller = new TextEditingController();
   TextEditingController _passcontroller1 = new TextEditingController();
   final FirebaseAuth auth = FirebaseAuth.instance;
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
@@ -74,7 +76,40 @@ class _ModelSignInState extends State<ModelSignIn> {
                       height: 50,
                       width: 285,
                       child: TextField(
-                        controller: _emailcontroller1,
+                        controller: _namecontroller,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.black),
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white70,
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50)),
+                              borderSide:
+                                  BorderSide(width: 2, color: Colors.white),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50)),
+                              borderSide:
+                                  BorderSide(width: 2, color: Colors.white),
+                            ),
+                            hintText: "Enter Name",
+                            hintStyle: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                            border: InputBorder.none),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 7,
+                    ),
+                    Container(
+                      height: 50,
+                      width: 285,
+                      child: TextField(
+                        controller: _emailcontroller,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.black),
                         textAlign: TextAlign.center,
@@ -226,10 +261,16 @@ class _ModelSignInState extends State<ModelSignIn> {
   void login() async {
     try {
       final User user = (await auth.createUserWithEmailAndPassword(
-              email: _emailcontroller1.text, password: _passcontroller1.text))
+              email: _emailcontroller.text, password: _passcontroller1.text))
           .user;
+      await user.updateProfile(displayName: _namecontroller.text);
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString('email', _emailcontroller1.text);
+      prefs.setString('email', _emailcontroller.text);
+      // Map<String, dynamic> userInfo = {
+      //   "name": _namecontroller.text,
+      //   "email": _emailcontroller,
+      // };
+      // DataStore().addUser(user.uid, userInfo);
       Navigator.push(context, MaterialPageRoute(builder: (context) => Page1()));
       print('Login Successful');
     } catch (e) {

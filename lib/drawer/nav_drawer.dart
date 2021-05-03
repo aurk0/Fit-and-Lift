@@ -31,10 +31,10 @@ class _NavDrawerState extends State<NavDrawer> {
             SizedBox(
               width: 20,
             ),
-            CircleAvatar(
-              radius: 40.0,
-              backgroundImage: NetworkImage(user.photoURL),
-            ),
+            // CircleAvatar(
+            //   radius: 40.0,
+            //   backgroundImage: NetworkImage(user.photoURL),
+            // ),
             SizedBox(
               width: 10,
             ),
