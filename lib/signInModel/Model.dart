@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_lift/page1.dart';
-import 'package:fit_lift/services/googlesignin.dart';
+import 'package:fit_lift/services/authhelper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -176,17 +176,7 @@ class _ModelSignInState extends State<ModelSignIn> {
                     SignInButton(
                         buttonType: ButtonType.google,
                         buttonSize: ButtonSize.large,
-                        onPressed: () async {
-                          try {
-                            await Authservice().signin();
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Page1()));
-                          } catch (e) {
-                            print('Google Sign In ERROR');
-                          }
-                        }),
+                        onPressed: () => AuthHelper().signGoogle(context)),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fit_lift/services/authhelper.dart';
 import 'package:fit_lift/signInModel/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -93,7 +94,8 @@ class _NavDrawerState extends State<NavDrawer> {
               title: Text("About"),
             ),
             ListTile(
-              onTap: () async {
+              onTap: () {
+                AuthHelper().signOut();
                 FirebaseAuth.instance.signOut();
                 mailLogout();
               },
