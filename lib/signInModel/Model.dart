@@ -13,7 +13,7 @@ class ModelSignIn extends StatefulWidget {
 }
 
 class _ModelSignInState extends State<ModelSignIn> {
-  TextEditingController _emailcontroller = new TextEditingController();
+  TextEditingController _emailcontroller1 = new TextEditingController();
   TextEditingController _namecontroller = new TextEditingController();
   TextEditingController _passcontroller1 = new TextEditingController();
   final FirebaseAuth auth = FirebaseAuth.instance;
@@ -109,7 +109,7 @@ class _ModelSignInState extends State<ModelSignIn> {
                       height: 50,
                       width: 285,
                       child: TextField(
-                        controller: _emailcontroller,
+                        controller: _emailcontroller1,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.black),
                         textAlign: TextAlign.center,
@@ -181,7 +181,7 @@ class _ModelSignInState extends State<ModelSignIn> {
                       child: TextButton(
                           onPressed: () async {
                             if (_key.currentState.validate()) {
-                              login();
+                              register();
                             }
                           },
                           child: Text(
@@ -216,11 +216,16 @@ class _ModelSignInState extends State<ModelSignIn> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Already have an account?',
+                          'Already have an account?  ',
                           style: TextStyle(color: Colors.white),
                         ),
-                        TextButton(
-                          onPressed: () {},
+                        SizedBox(
+                          height: 30,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            registerDialogue(context);
+                          },
                           child: Text(
                             'Log In',
                             style: TextStyle(
@@ -258,21 +263,110 @@ class _ModelSignInState extends State<ModelSignIn> {
     );
   }
 
+  TextEditingController _emailcontroller2 = new TextEditingController();
+  TextEditingController _passcontroller2 = new TextEditingController();
+  registerDialogue(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (_) => new AlertDialog(
+              backgroundColor: Colors.grey[900].withOpacity(0.9),
+              title: Text(
+                "Sign in to enter!",
+                style: TextStyle(color: Colors.white),
+              ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              content: Builder(
+                builder: (context) {
+                  return Container(
+                    height: 160,
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 30,
+                        ),
+                        TextField(
+                            controller: _emailcontroller2,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                labelText: "Enter E-mail",
+                                labelStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                                filled: true,
+                                fillColor: Colors.white)),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        TextField(
+                            obscureText: true,
+                            controller: _passcontroller2,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                labelText: "Enter Password",
+                                labelStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                                filled: true,
+                                fillColor: Colors.white)),
+                      ],
+                    ),
+                  );
+                },
+              ),
+              actions: [
+                TextButton(
+                    onPressed: () async {
+                      login();
+                    },
+                    child: Text(
+                      "Log In",
+                      style: TextStyle(color: Colors.cyan[600]),
+                    ))
+              ],
+            ));
+  }
+
   void login() async {
     try {
+      final User user = (await auth.signInWithEmailAndPassword(
+        email: _emailcontroller2.text,
+        password: _passcontroller2.text,
+      ))
+          .user;
+      // SharedPreferences prefs = await SharedPreferences.getInstance();
+      // prefs.setString('email', _emailcontroller2.text);
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Page1()));
+      print('Login Successful');
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void register() async {
+    try {
       final User user = (await auth.createUserWithEmailAndPassword(
-              email: _emailcontroller.text, password: _passcontroller1.text))
+              email: _emailcontroller1.text, password: _passcontroller1.text))
           .user;
       await user.updateProfile(displayName: _namecontroller.text);
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString('email', _emailcontroller.text);
+      // SharedPreferences prefs = await SharedPreferences.getInstance();
+      // prefs.setString('email', _emailcontroller1.text);
       // Map<String, dynamic> userInfo = {
       //   "name": _namecontroller.text,
-      //   "email": _emailcontroller,
+      //   "email": _emailcontroller1,
       // };
       // DataStore().addUser(user.uid, userInfo);
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Page1()));
-      print('Login Successful');
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Page1()));
+      print('register Successful');
     } catch (e) {
       print(e);
     }
