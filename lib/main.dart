@@ -12,9 +12,7 @@ Future main() async {
   await Firebase.initializeApp();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   var email = prefs.getString('email');
-  runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: email == null ? FitLift() : Page1()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: FitLift()));
 }
 
 class FitLift extends StatefulWidget {
@@ -23,13 +21,26 @@ class FitLift extends StatefulWidget {
 }
 
 class _FitLiftState extends State<FitLift> {
+  var email;
   @override
   void initState() {
     super.initState();
-    Timer(
-        Duration(seconds: 4),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => ModelSignIn())));
+    SharedPreferences.getInstance().then((prefValue) => {
+          setState(() {
+            email = prefValue.getString('email');
+            if (email == null) {
+              Timer(
+                  Duration(seconds: 4),
+                  () => Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => ModelSignIn())));
+            } else {
+              Timer(
+                  Duration(seconds: 4),
+                  () => Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => Page1())));
+            }
+          })
+        });
   }
 
   @override
