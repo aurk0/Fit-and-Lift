@@ -377,7 +377,7 @@ class _ModelSignInState extends State<ModelSignIn> {
       prefs.setString('email', _emailcontroller1.text);
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Page1()));
-      print('register Successful');
+      print('Registration Successful');
     } catch (e) {
       print(e);
     }
