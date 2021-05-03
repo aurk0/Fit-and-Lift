@@ -31,10 +31,10 @@ class _NavDrawerState extends State<NavDrawer> {
             SizedBox(
               width: 20,
             ),
-            // CircleAvatar(
-            //   radius: 40.0,
-            //   backgroundImage: NetworkImage(user.photoURL),
-            // ),
+            CircleAvatar(
+              radius: 40.0,
+              backgroundImage: NetworkImage(user.photoURL),
+            ),
             SizedBox(
               width: 10,
             ),
@@ -52,8 +52,9 @@ class _NavDrawerState extends State<NavDrawer> {
                 Text(
                   user.email,
                   style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 12,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
                   ),
                 )
               ],

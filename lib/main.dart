@@ -1,23 +1,20 @@
 import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fit_lift/signInModel/signin.dart';
+import 'package:fit_lift/page1.dart';
+import 'package:fit_lift/signInModel/Model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
-import 'signInModel/signin.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: (SignIn()));
-  }
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  var email = prefs.getString('email');
+  runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: email == null ? FitLift() : Page1()));
 }
 
 class FitLift extends StatefulWidget {
@@ -29,11 +26,10 @@ class _FitLiftState extends State<FitLift> {
   @override
   void initState() {
     super.initState();
-
     Timer(
         Duration(seconds: 4),
-        () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => SignIn())));
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => ModelSignIn())));
   }
 
   @override

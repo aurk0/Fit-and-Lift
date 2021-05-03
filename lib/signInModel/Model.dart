@@ -1,9 +1,11 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_lift/page1.dart';
 import 'package:fit_lift/services/authhelper.dart';
-import 'package:fit_lift/services/dataStore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sign_button/sign_button.dart';
 
@@ -18,6 +20,13 @@ class _ModelSignInState extends State<ModelSignIn> {
   TextEditingController _passcontroller1 = new TextEditingController();
   final FirebaseAuth auth = FirebaseAuth.instance;
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
+
+  //pick profile image
+  Future<PickedFile> imageFile;
+  pickIMG(ImageSource source) {
+    imageFile = ImagePicker.platform.pickImage(source: source);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -81,6 +90,12 @@ class _ModelSignInState extends State<ModelSignIn> {
                             fontWeight: FontWeight.bold, color: Colors.black),
                         textAlign: TextAlign.center,
                         decoration: InputDecoration(
+                            prefixIcon: GestureDetector(
+                                onTap: () {
+                                  pickIMG(ImageSource.gallery);
+                                },
+                                child: Icon(Icons.image_outlined,
+                                    color: Colors.black)),
                             filled: true,
                             fillColor: Colors.white70,
                             enabledBorder: OutlineInputBorder(
@@ -209,7 +224,7 @@ class _ModelSignInState extends State<ModelSignIn> {
                     ),
                     SizedBox(height: 5),
                     SignInButton(
-                        buttonType: ButtonType.google,
+                        buttonType: ButtonType.googleDark,
                         buttonSize: ButtonSize.large,
                         onPressed: () => AuthHelper().signGoogle(context)),
                     Row(
@@ -341,8 +356,8 @@ class _ModelSignInState extends State<ModelSignIn> {
         password: _passcontroller2.text,
       ))
           .user;
-      // SharedPreferences prefs = await SharedPreferences.getInstance();
-      // prefs.setString('email', _emailcontroller2.text);
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('email', _emailcontroller2.text);
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Page1()));
       print('Login Successful');
@@ -356,9 +371,10 @@ class _ModelSignInState extends State<ModelSignIn> {
       final User user = (await auth.createUserWithEmailAndPassword(
               email: _emailcontroller1.text, password: _passcontroller1.text))
           .user;
-      await user.updateProfile(displayName: _namecontroller.text);
-      // SharedPreferences prefs = await SharedPreferences.getInstance();
-      // prefs.setString('email', _emailcontroller1.text);
+      await user.updateProfile(
+          displayName: _namecontroller.text, photoURL: imageFile.toString());
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('email', _emailcontroller1.text);
       // Map<String, dynamic> userInfo = {
       //   "name": _namecontroller.text,
       //   "email": _emailcontroller1,
