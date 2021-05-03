@@ -375,11 +375,6 @@ class _ModelSignInState extends State<ModelSignIn> {
           displayName: _namecontroller.text, photoURL: imageFile.toString());
       SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setString('email', _emailcontroller1.text);
-      // Map<String, dynamic> userInfo = {
-      //   "name": _namecontroller.text,
-      //   "email": _emailcontroller1,
-      // };
-      // DataStore().addUser(user.uid, userInfo);
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Page1()));
       print('register Successful');

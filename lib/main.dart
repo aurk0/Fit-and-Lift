@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: FitLift()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Page1()));
 }
 
 class FitLift extends StatefulWidget {
@@ -23,9 +23,9 @@ class _FitLiftState extends State<FitLift> {
   @override
   void initState() {
     super.initState();
-    SharedPreferences.getInstance().then((prefValue) => {
+    SharedPreferences.getInstance().then((prefs) => {
           setState(() {
-            email = prefValue.getString('email');
+            email = prefs.getString('email');
             if (email == null) {
               Timer(
                   Duration(seconds: 4),

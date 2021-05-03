@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_lift/services/authhelper.dart';
-import 'package:fit_lift/signInModel/signin.dart';
+import 'package:fit_lift/signInModel/Model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -117,6 +117,7 @@ class _NavDrawerState extends State<NavDrawer> {
     prefs.remove('email');
     await auth.signOut();
     Navigator.pop(context);
-    Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ModelSignIn()));
   }
 }

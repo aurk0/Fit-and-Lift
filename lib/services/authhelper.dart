@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_lift/page1.dart';
-import 'package:fit_lift/services/dataStore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -28,15 +27,6 @@ class AuthHelper {
       prefs.setString('email', result.user.email);
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Page1()));
-
-      // Map<String, dynamic> gUserMap = {
-      //   "email": result.user.email,
-      //   "username": result.user.displayName,
-      //   "image": result.user.photoURL
-      // };
-      // DataStore().addgUser(result.user.uid, gUserMap).then((value) {
-
-      // });
     }
   }
 
