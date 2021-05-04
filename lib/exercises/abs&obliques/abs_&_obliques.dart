@@ -1,16 +1,17 @@
+import 'package:fit_lift/exercises/abs&obliques/a_c.dart';
 import 'package:fit_lift/exercises/abs&obliques/b_c.dart';
-import 'package:fit_lift/exercises/abs&obliques/c_.dart';
-import 'package:fit_lift/exercises/abs&obliques/l_c.dart';
-import 'package:fit_lift/exercises/abs&obliques/m_c.dart';
+import 'package:fit_lift/exercises/abs&obliques/c_c.dart';
+import 'package:fit_lift/exercises/abs&obliques/f_k.dart';
+import 'package:fit_lift/exercises/abs&obliques/h_t.dart';
+import 'package:fit_lift/exercises/abs&obliques/k_n_c.dart';
+import 'package:fit_lift/exercises/abs&obliques/l_d.dart';
 import 'package:fit_lift/exercises/abs&obliques/r_c.dart';
-import 'package:fit_lift/exercises/abs&obliques/s_c.dart';
+import 'package:fit_lift/exercises/abs&obliques/r_i_p.dart';
+import 'package:fit_lift/exercises/abs&obliques/r_t.dart';
 import 'package:fit_lift/exercises/abs&obliques/s_k.dart';
-import 'package:fit_lift/exercises/abs&obliques/t_p.dart';
-import 'package:fit_lift/exercises/abs&obliques/tuck_p.dart';
-import 'package:fit_lift/exercises/abs&obliques/v_c.dart';
 import 'package:flutter/material.dart';
 
-class Abs_Onliques extends StatelessWidget {
+class Abs_Obliques extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,8 +19,8 @@ class Abs_Onliques extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'gymImages/legs&glutes.jpg',
-            fit: BoxFit.fill,
+            'gymImages/abs&obliques.jpg',
+            fit: BoxFit.cover,
           ),
           Scaffold(
             backgroundColor: Colors.transparent,
@@ -30,7 +31,7 @@ class Abs_Onliques extends StatelessWidget {
                 'Abs & Obliques',
                 style: TextStyle(
                     fontSize: 25,
-                    color: Colors.black,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold),
               ),
               elevation: 0,
@@ -56,14 +57,14 @@ class Abs_Onliques extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'Crunches',
+                              'Knee Tuck Crunch',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              '20 reps',
+                              '30 reps',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 17,
@@ -100,7 +101,7 @@ class Abs_Onliques extends StatelessWidget {
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              '20 reps',
+                              '30 reps',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 17,
@@ -137,7 +138,7 @@ class Abs_Onliques extends StatelessWidget {
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              '20 reps',
+                              '30 reps',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 17,
@@ -158,7 +159,7 @@ class Abs_Onliques extends StatelessWidget {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => StarCrunches())),
+                            builder: (context) => CrossCrunches())),
                     child: Material(
                       shadowColor: Colors.grey[900],
                       elevation: 20,
@@ -167,7 +168,44 @@ class Abs_Onliques extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'Star Crunches',
+                              'Cross Crunches',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              '30 reps',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 17,
+                              ),
+                            )
+                          ],
+                        ),
+                        height: 100,
+                        width: double.infinity,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => FlutterKicks())),
+                    child: Material(
+                      shadowColor: Colors.grey[900],
+                      elevation: 20,
+                      child: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              'Flutter kicks',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
@@ -193,7 +231,7 @@ class Abs_Onliques extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => VCrunches())),
+                        MaterialPageRoute(builder: (context) => HeelTouch())),
                     child: Material(
                       shadowColor: Colors.grey[900],
                       elevation: 20,
@@ -202,14 +240,14 @@ class Abs_Onliques extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'V-Crunches',
+                              'Heel Touch',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              '20 reps',
+                              '15 reps',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 17,
@@ -228,7 +266,7 @@ class Abs_Onliques extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => TiktokPlank())),
+                        MaterialPageRoute(builder: (context) => LegDrops())),
                     child: Material(
                       shadowColor: Colors.grey[900],
                       elevation: 20,
@@ -237,42 +275,7 @@ class Abs_Onliques extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'Tiktok Plank',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              '20 reps',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17,
-                              ),
-                            )
-                          ],
-                        ),
-                        height: 100,
-                        width: double.infinity,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  InkWell(
-                    onTap: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => TuckPlank())),
-                    child: Material(
-                      shadowColor: Colors.grey[900],
-                      elevation: 20,
-                      child: Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              'Tuck Plank',
+                              'Leg Drops',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
@@ -300,7 +303,7 @@ class Abs_Onliques extends StatelessWidget {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => LeaningCamel())),
+                            builder: (context) => RussianTwist())),
                     child: Material(
                       shadowColor: Colors.grey[900],
                       elevation: 20,
@@ -309,7 +312,7 @@ class Abs_Onliques extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'Leaning Camel',
+                              'Russian Twist',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
@@ -334,10 +337,8 @@ class Abs_Onliques extends StatelessWidget {
                     height: 30,
                   ),
                   InkWell(
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => MountainClimber())),
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ArmCircles())),
                     child: Material(
                       shadowColor: Colors.grey[900],
                       elevation: 20,
@@ -346,14 +347,51 @@ class Abs_Onliques extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'Mountain Climber',
+                              'Arm Circles',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              '20 reps',
+                              '15 reps',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 17,
+                              ),
+                            )
+                          ],
+                        ),
+                        height: 100,
+                        width: double.infinity,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RunningInPlace())),
+                    child: Material(
+                      shadowColor: Colors.grey[900],
+                      elevation: 20,
+                      child: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              'Running In Place',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              '15 reps',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 17,

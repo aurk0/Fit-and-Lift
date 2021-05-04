@@ -44,7 +44,7 @@ class Page1body extends StatelessWidget {
           ),
           InkWell(
             onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Abs_Onliques())),
+                MaterialPageRoute(builder: (context) => Abs_Obliques())),
             child: Material(
                 child: Container(
                   height: 150,

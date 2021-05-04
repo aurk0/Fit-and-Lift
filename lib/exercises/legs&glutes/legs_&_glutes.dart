@@ -20,7 +20,7 @@ class Legs_Glutes extends StatelessWidget {
         children: [
           Image.asset(
             'gymImages/legs&glutes.jpg',
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
           ),
           Scaffold(
             backgroundColor: Colors.transparent,
