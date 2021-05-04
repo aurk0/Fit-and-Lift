@@ -18,7 +18,7 @@ class Page1 extends StatelessWidget {
   AppBar buildAppBar() {
     return AppBar(
       elevation: 0,
-      backgroundColor: Colors.indigo[200],
+      backgroundColor: Colors.indigo[300],
       leading: Builder(builder: (context) {
         return IconButton(
             icon: Icon(

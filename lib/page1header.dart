@@ -17,7 +17,7 @@ class Page1Header extends StatelessWidget {
           Container(
             height: size.height * 0.25 - 20,
             decoration: BoxDecoration(
-                color: Colors.indigo[200],
+                color: Colors.indigo[300],
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(35),
                     bottomRight: Radius.circular(35))),

@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: FitLift()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Page1()));
 }
 
 class FitLift extends StatefulWidget {

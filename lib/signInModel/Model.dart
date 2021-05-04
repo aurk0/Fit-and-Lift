@@ -22,6 +22,7 @@ class _ModelSignInState extends State<ModelSignIn> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
 
   //pick profile image
+
   Future<PickedFile> imageFile;
   pickIMG(ImageSource source) {
     imageFile = ImagePicker.platform.pickImage(source: source);
@@ -91,8 +92,8 @@ class _ModelSignInState extends State<ModelSignIn> {
                         textAlign: TextAlign.center,
                         decoration: InputDecoration(
                             prefixIcon: GestureDetector(
-                                onTap: () {
-                                  pickIMG(ImageSource.gallery);
+                                onTap: () async {
+                                  await pickIMG(ImageSource.gallery);
                                 },
                                 child: Icon(Icons.image_outlined,
                                     color: Colors.black)),
