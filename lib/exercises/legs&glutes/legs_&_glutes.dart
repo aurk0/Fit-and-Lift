@@ -432,6 +432,9 @@ class Legs_Glutes extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 30,
+                  ),
                 ],
               ),
             ),

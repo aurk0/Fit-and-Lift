@@ -39,7 +39,7 @@ class Abs_Obliques extends StatelessWidget {
                 onPressed: () => Navigator.pop(context, false),
                 icon: Icon(
                   Icons.arrow_back_ios_rounded,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             ),
