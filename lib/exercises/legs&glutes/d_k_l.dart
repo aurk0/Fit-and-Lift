@@ -30,7 +30,8 @@ class DonkeyKL extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/legs&glutes/kickL.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/JYNzdoAIU31xRAzv66/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

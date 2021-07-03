@@ -30,8 +30,8 @@ class Crunches extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image:
-                          AssetImage('gifs/abs&obliques/kneetuckcrunch.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/wjqQ6lN1N6TpKJMZIU/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

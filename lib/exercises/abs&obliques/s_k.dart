@@ -30,7 +30,8 @@ class ScissorKicks extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/abs&obliques/scissorkicks.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/XcPMIbzrpXx024qAUi/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

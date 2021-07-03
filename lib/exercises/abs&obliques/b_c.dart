@@ -30,8 +30,8 @@ class BicycleCrunches extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image:
-                          AssetImage('gifs/abs&obliques/bicyclecrunch.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/9qrDF9TKSldXGwaW4F/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

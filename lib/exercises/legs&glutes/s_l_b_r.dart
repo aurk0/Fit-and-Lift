@@ -30,7 +30,8 @@ class SingleLegR extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/legs&glutes/bridgeR.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/MUoE7QYn57kChUPBWS/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

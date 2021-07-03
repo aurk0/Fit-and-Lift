@@ -30,7 +30,8 @@ class Squat_Kick extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/legs&glutes/squat&kick.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/whaHXqO4WDQxyzbLRr/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

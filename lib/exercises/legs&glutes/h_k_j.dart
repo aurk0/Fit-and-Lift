@@ -30,8 +30,8 @@ class HighKneeJacks extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image:
-                          AssetImage('gifs/legs&glutes/hightkneejacks.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/BTFZW5iDd3ywfNmmoE/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

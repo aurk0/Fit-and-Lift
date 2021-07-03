@@ -30,8 +30,8 @@ class ObliqueTwistSquat extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage(
-                          'gifs/legs&glutes/obliquetwistsquat.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/6xSFVXM1kTW3AW71KT/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

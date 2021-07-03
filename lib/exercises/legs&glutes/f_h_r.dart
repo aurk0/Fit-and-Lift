@@ -30,7 +30,8 @@ class FireHR extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/legs&glutes/fireR.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/Zy8zLefBxaP0Cgy88h/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

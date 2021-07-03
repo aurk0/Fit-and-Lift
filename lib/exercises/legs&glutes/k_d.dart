@@ -30,7 +30,8 @@ class KneeDrive extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/legs&glutes/kneedrive.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/rtkp595yS9XVhOm34m/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

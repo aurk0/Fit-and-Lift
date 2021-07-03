@@ -30,7 +30,8 @@ class ArmCircles extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/abs&obliques/armCircles.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/iK96JEVxpL3p78SX3H/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

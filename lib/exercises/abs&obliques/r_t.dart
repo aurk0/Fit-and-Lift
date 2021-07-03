@@ -30,7 +30,8 @@ class RussianTwist extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/abs&obliques/russiantwist.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/7TENv8wgqsAOTD4qj7/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

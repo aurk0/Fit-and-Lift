@@ -30,8 +30,8 @@ class ReverseCrunches extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image:
-                          AssetImage('gifs/abs&obliques/reversecrunch.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/RU2hU38vwTQKhdVW7w/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

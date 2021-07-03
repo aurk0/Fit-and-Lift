@@ -30,7 +30,8 @@ class HeelTouch extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/abs&obliques/heeltouch.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/BhY0cWDiisG1kheiva/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

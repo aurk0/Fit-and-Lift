@@ -30,7 +30,8 @@ class DonkeyKR extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/legs&glutes/kickR.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/l1CDH0sAQ4i99tsk4R/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

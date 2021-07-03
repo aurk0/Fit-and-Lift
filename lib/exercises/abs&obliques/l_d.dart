@@ -30,7 +30,8 @@ class LegDrops extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/abs&obliques/legdrops.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/1uq8vGlxNSNfdWrYED/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

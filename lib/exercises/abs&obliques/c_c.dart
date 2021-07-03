@@ -30,7 +30,8 @@ class CrossCrunches extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/abs&obliques/cross.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/WuX5vVG4AoobYYyjNy/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

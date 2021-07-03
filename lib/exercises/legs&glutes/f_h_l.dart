@@ -30,7 +30,8 @@ class FireHL extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/legs&glutes/fireL.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/mocZFLVZWHa3wCkO3w/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

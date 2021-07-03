@@ -30,7 +30,8 @@ class RunningInPlace extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/abs&obliques/running.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/9jGxSH5hfdFQMlSFbR/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),
