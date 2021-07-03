@@ -30,8 +30,8 @@ class SideLegsRise extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage(
-                          'gifs/inner&outerThighs/sidelegsrise.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/u4GDBt8VRZCqTyo0WM/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

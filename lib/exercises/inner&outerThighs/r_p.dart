@@ -30,8 +30,8 @@ class Rise_Pile extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage(
-                          'gifs/inner&outerThighs/riseandpile.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/GJSviVX7KXZNnlnkBN/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

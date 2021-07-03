@@ -30,7 +30,8 @@ class WalkDown extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/arms&back/walkdown.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/KYltmvsVJNLmemvUHl/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

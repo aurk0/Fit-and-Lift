@@ -30,8 +30,8 @@ class TorsoRotation extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage(
-                          'gifs/inner&outerThighs/torsorotation.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/jN7PqyUoIOSaqSavkQ/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

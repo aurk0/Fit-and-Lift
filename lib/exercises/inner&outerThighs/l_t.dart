@@ -30,8 +30,8 @@ class LateralTraps extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage(
-                          'gifs/inner&outerThighs/lateraltraps.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/U7ywfYFxSKazVAVm5n/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

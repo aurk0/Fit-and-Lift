@@ -31,8 +31,8 @@ class SkiJacks extends StatelessWidget {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.fitHeight,
-                        image:
-                            AssetImage('gifs/inner&outerThighs/skijacks.gif'))),
+                        image: NetworkImage(
+                            'https://media.giphy.com/media/rx54YAyxtFEChizyZQ/giphy.gif'))),
                 height: 270,
                 width: double.infinity,
               ),

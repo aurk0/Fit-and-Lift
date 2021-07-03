@@ -30,7 +30,8 @@ class BackTurns extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/arms&back/backturns.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/y0cUGtd6SVjEcyScRX/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

@@ -30,8 +30,8 @@ class SideBends extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image:
-                          AssetImage('gifs/inner&outerThighs/sidebends.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/x074RBautapcX0pkyn/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

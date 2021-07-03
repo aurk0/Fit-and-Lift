@@ -30,7 +30,8 @@ class Punches extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/arms&back/punches.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/l8xLUCXa4PUiAmBrB6/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

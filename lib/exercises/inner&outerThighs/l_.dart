@@ -30,7 +30,8 @@ class Lunges extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/inner&outerThighs/lunges.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/5Y4JMKhxtB3NYKjXqm/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

@@ -30,7 +30,8 @@ class TricepsDipKicks extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/arms&back/tricepdipkicks.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/KbvuC15YR5p3HoYM9e/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),

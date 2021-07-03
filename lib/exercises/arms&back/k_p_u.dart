@@ -31,7 +31,8 @@ class KneePushUps extends StatelessWidget {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.fitHeight,
-                        image: AssetImage('gifs/arms&back/kneepushups.gif'))),
+                        image: NetworkImage(
+                            'https://media.giphy.com/media/sJIHOtTFeS2Yu82mDc/giphy.gif'))),
                 height: 270,
                 width: double.infinity,
               ),

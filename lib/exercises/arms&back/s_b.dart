@@ -30,7 +30,8 @@ class SwingBack extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage('gifs/arms&back/swingback.gif'))),
+                      image: NetworkImage(
+                          'https://media.giphy.com/media/dpKO1hOKXizZYrGS33/giphy.gif'))),
               height: 270,
               width: double.infinity,
             ),
