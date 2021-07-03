@@ -1,5 +1,6 @@
 import 'package:fit_lift/exercises/abs&obliques/abs_&_obliques.dart';
 import 'package:fit_lift/exercises/arms&back/arms&back.dart';
+import 'package:fit_lift/exercises/chest&triceps/chest&triceps.dart';
 import 'package:fit_lift/exercises/inner&outerThighs/inner&outer_thighs.dart';
 import 'package:fit_lift/exercises/legs&glutes/legs_&_glutes.dart';
 import 'package:fit_lift/page1header.dart';
@@ -128,27 +129,31 @@ class Page1body extends StatelessWidget {
           SizedBox(
             height: 35,
           ),
-          Material(
-              child: Container(
-                height: 150,
-                width: 300,
-                child: Align(
-                  child: Text(
-                    'Chest & Triceps',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+          InkWell(
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Chest_Triceps())),
+            child: Material(
+                child: Container(
+                  height: 150,
+                  width: 300,
+                  child: Align(
+                    child: Text(
+                      'Chest & Triceps',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                    alignment: Alignment(0.90, 0.90),
                   ),
-                  alignment: Alignment(0.90, 0.90),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage('gymImages/Box5.jpg'))),
                 ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage('gymImages/Box5.jpg'))),
-              ),
-              color: Colors.white,
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15))),
+                color: Colors.white,
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15))),
+          ),
           SizedBox(
             height: 35,
           ),
@@ -182,6 +187,30 @@ class Page1body extends StatelessWidget {
                 width: 300,
                 child: Align(
                   child: Text(
+                    'Yoga',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                  alignment: Alignment(0.90, 0.90),
+                ),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: DecorationImage(
+                        fit: BoxFit.fitHeight,
+                        image: AssetImage('gymImages/Box8.jpg'))),
+              ),
+              color: Colors.white,
+              elevation: 10,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15))),
+          SizedBox(
+            height: 35,
+          ),
+          Material(
+              child: Container(
+                height: 150,
+                width: 300,
+                child: Align(
+                  child: Text(
                     'Diet',
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
@@ -198,29 +227,8 @@ class Page1body extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15))),
           SizedBox(
-            height: 35,
+            height: 20,
           ),
-          Material(
-              child: Container(
-                height: 150,
-                width: 300,
-                child: Align(
-                  child: Text(
-                    'Yoga',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  alignment: Alignment(0.90, 0.90),
-                ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                        fit: BoxFit.fitHeight,
-                        image: AssetImage('gymImages/Box8.jpg'))),
-              ),
-              color: Colors.white,
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)))
         ],
       ),
     );

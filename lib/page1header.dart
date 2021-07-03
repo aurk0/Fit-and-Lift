@@ -59,7 +59,7 @@ class Page1Header extends StatelessWidget {
                 child: TextButton(
                     onPressed: () {},
                     child: Text(
-                      'SET A GOAL',
+                      'WORKOUT SCHEDULE',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

@@ -1,0 +1,74 @@
+import 'package:flutter/material.dart';
+
+class TPushUps extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        toolbarHeight: 150,
+        title: Text(
+          'T-Push Ups',
+          style: TextStyle(
+              fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.black,
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context, false),
+          icon: Icon(
+            Icons.arrow_back_ios_rounded,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.fitHeight,
+                        image: NetworkImage(
+                            'https://media.giphy.com/media/PuQPRMAG7eatYdygHb/giphy.gif'))),
+                height: 270,
+                width: double.infinity,
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text(
+                "The T Push-up exercise is a good all round strength builder, targeting major muscle groups and joints. A good exercise for working the shoulder girdle, obliques, the back and core body, as well as the chest.",
+                style: TextStyle(fontSize: 25, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 50,
+                width: 300,
+                child: RaisedButton.icon(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50)),
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.navigate_next_rounded,
+                      color: Colors.black,
+                      size: 40,
+                    ),
+                    label: Text(
+                      'Start',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                    )),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
