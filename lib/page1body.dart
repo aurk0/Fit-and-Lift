@@ -1,3 +1,4 @@
+import 'package:fit_lift/exercises/abdominals/abdominals.dart';
 import 'package:fit_lift/exercises/abs&obliques/abs_&_obliques.dart';
 import 'package:fit_lift/exercises/arms&back/arms&back.dart';
 import 'package:fit_lift/exercises/chest&triceps/chest&triceps.dart';
@@ -157,27 +158,31 @@ class Page1body extends StatelessWidget {
           SizedBox(
             height: 35,
           ),
-          Material(
-              child: Container(
-                height: 150,
-                width: 300,
-                child: Align(
-                  child: Text(
-                    'Abdominals',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+          InkWell(
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Abdominals())),
+            child: Material(
+                child: Container(
+                  height: 150,
+                  width: 300,
+                  child: Align(
+                    child: Text(
+                      'Abdominals',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                    alignment: Alignment(0.90, 0.90),
                   ),
-                  alignment: Alignment(0.90, 0.90),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage('gymImages/Box6.jpg'))),
                 ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage('gymImages/Box6.jpg'))),
-              ),
-              color: Colors.white,
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15))),
+                color: Colors.white,
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15))),
+          ),
           SizedBox(
             height: 35,
           ),
