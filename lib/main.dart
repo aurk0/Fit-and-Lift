@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fit_lift/exercises/yoga/yoga.dart';
 import 'package:fit_lift/page1.dart';
 import 'package:fit_lift/signInModel/Model.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Page1()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Yoga()));
 }
 
 class FitLift extends StatefulWidget {
